@@ -1,0 +1,13 @@
+version: "3.1"
+
+services:
+  ganache:
+    image: trufflesuite/ganache:latest
+    restart: always
+    ports:
+      - 8545:8545
+    command: --db /data --accounts 16 --wallet.seed 16051994
+    volumes:
+      - "ganache-vol:/data"
+volumes:
+  ganache-vol:
